@@ -84,7 +84,7 @@ pipeline{
         stage('ZAP Dynamic Testing | DAST') {
             steps {
                 sshagent(['OWASP-Zap-Credential']) {
-                    sh 'ssh -o StrictHostKeyChecking=no ubuntu@3.145.179.241 "docker run -t owasp/zap2docker-stable zap-baseline.py -t http://13.58.91.251:30000/" || true'
+                    sh 'ssh -o StrictHostKeyChecking=no ubuntu@3.133.155.252 "docker run -t owasp/zap2docker-stable zap-baseline.py -t http://3.145.112.52:30000/" || true'
                                                         //JENKINS_PUBLIC_IP                                                      //EKS_WORKER_NODE_IP_ADDRESS:3000
                 }
             }
